@@ -151,9 +151,9 @@
 			            // value with linear interpolation
 			            var value = min + (max - min) * (currentWindow - top) / (bottom - top);
 			            // set background-position
-			            var orizontalPosition = path.attr("data-oriz-pos");
-			            orizontalPosition = orizontalPosition ? orizontalPosition : "50%";
-			            $(this).css("background-position", orizontalPosition + " " + value + "px");
+			            var horizontalPosition = path.attr("data-horiz-pos");
+			            horizontalPosition = horizontalPosition ? horizontalPosition : "50%";
+			            $(this).css("background-position", horizontalPosition + " " + value + "px");
 			        }
 			    });
 			}

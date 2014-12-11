@@ -242,7 +242,7 @@ section {
 }
 
 #work2 {
-	background-color: #fadec8;
+	background-color: #f0e9db;
 }
 
 #social {
@@ -359,8 +359,8 @@ article header:after {
 .diamonds {
 	background-image:url('../img/bg-diamonds.jpg');
 	padding-top: 1em;
-	margin-bottom:2em;
-	border-top:6px solid #f68e9a;
+	margin-top:2em;
+	border-bottom:6px solid #f68e9a;
 	position: relative;
 	height:3em;
 }
@@ -474,8 +474,12 @@ li {
 		max-width:none;
 	}
 
-	.glitter, .diamonds {
+	.glitter {
 		height:5em;
+	}
+
+	.diamonds {
+		height:18em;
 	}
 	
 	.rounded {
