@@ -128,8 +128,6 @@ nav ul {
 }
 
 nav a {
-	font-size:
-
     float: left;
     width: 27%;
     margin: 0 1.7%;
@@ -147,18 +145,14 @@ nav a {
     
     font-family: 'Montserrat', 'Raleway', Helvetica, Helvetica Neue, Arial, sans-serif;
     position: relative;
-}
 
-nav a {
-    float: left;
-    width: 27%;
-    margin: 0 1.7%;
-    padding: 25px 2%;
-    margin-bottom: 0;
+    height:13px;
 }
 
 nav .social a {
 	width: 10%;
+    padding: 20px 2%;
+    height:23px;
 }
 
 nav li:first-child a {
@@ -178,7 +172,11 @@ nav a:hover {
     text-decoration: underline;
 }
 
-nav a.active {
+nav a:hover .fa {
+    color: #e33451;
+}
+
+nav a.active, nav a.active .fa  {
     color: #fe3b5b;
 }
 
@@ -192,7 +190,7 @@ nav a.active:after {
 	position: absolute;
 	left: 50%;
     margin-left: -9px;
-    bottom: -11px;
+    bottom: -9px;
 }
 
 nav a span {
@@ -201,7 +199,7 @@ nav a span {
 
 nav a .fa {
 	font-size: 2em;
-	color: #fe3b5b;
+	color: #e46379;
 }
 
 /* ==============
@@ -370,17 +368,7 @@ article header:after {
 .diamonds h2 {
 	margin-bottom: 0.2em;
 }
-/*
-.diamonds:before {
-	background: no-repeat url(../img/work-arrow.png) scroll center center transparent;
-	content: "";
-    height: 150px;
-    left: 0;
-    position: absolute;
-    top: -86px;
-    width: 60px;
-}
-*/
+
 .before, .after {
 	max-width: 48%;
 	margin: 0 1%;
@@ -445,24 +433,11 @@ li {
    ==================== */
 
     nav a {
-        float: left;
-        width: 27%;
-        margin: 0 1.7%;
-        padding: 25px 2%;
-        margin-bottom: 0;
+    	height:18px;
     }
-    
-    nav .social a {
-		width: 10%;
+	nav .social a {
+	    height:28px;
 	}
-
-    nav li:first-child a {
-        margin-left: 0;
-    }
-
-    nav li:last-child a {
-        margin-right: 0;
-    }
 
 /* ========================
     INTERMEDIATE: IE Fixes
@@ -512,16 +487,12 @@ li {
 		margin: 0.5em 0;
 	}
 
-/* ====================
-    WIDE: CSS3 Effects
-   ==================== */
-/*
-    .header-container,
-    .main aside {
-        -webkit-box-shadow: 0 5px 10px #aaa;
-           -moz-box-shadow: 0 5px 10px #aaa;
-                box-shadow: 0 5px 10px #aaa;
-    }*/
+    nav a {
+    	height:27px;
+    }
+	nav .social a {
+	    height:37px;
+	}
 
 /* ============
     WIDE: Menu
@@ -543,11 +514,6 @@ li {
     .narrow {
         max-width: 620px;
     }
-    
-/*    article header {
-	    min-height: 520px;
-    }*/
-
 	
 	.main article h1 {
 	    font-size: 2.4em;
@@ -556,12 +522,6 @@ li {
 	h3 {
 		font-size: 1.7em;
 	}
-	/*
-	.before, .after {
-		max-width: 100%;
-		margin: 0 1%;
-		float: left;
-	}*/
 
 	section {
 		padding:0 0 60px;

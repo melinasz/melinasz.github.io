@@ -1,8 +1,3 @@
-
-
-			
-
-
 			window.twttr = (function (d, s, id) {
 			  var t, js, fjs = d.getElementsByTagName(s)[0];
 			  if (d.getElementById(id)) return;
@@ -26,9 +21,9 @@
 			        $('nav a').removeClass('active');
 			        $('nav a.work').addClass('active');
 			    }
-			    if (scrollPos >= $('#contact').offset().top - 150) {
+			    if (scrollPos >= $('#social').offset().top - 150) {
 			        $('nav a').removeClass('active');
-			        $('nav a.contact').addClass('active');
+			        $('nav a.twitter').addClass('active');
 			    }
 			    
 			    if (scrollPos <= $('#profile').offset().top - 175 && $('.header-container').is(':visible')) {
