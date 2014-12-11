@@ -157,6 +157,10 @@ nav a {
     margin-bottom: 0;
 }
 
+nav .social a {
+	width: 10%;
+}
+
 nav li:first-child a {
     margin-left: 0;
 }
@@ -188,7 +192,16 @@ nav a.active:after {
 	position: absolute;
 	left: 50%;
     margin-left: -9px;
-    bottom: -10px;
+    bottom: -11px;
+}
+
+nav a span {
+	display: none;
+}
+
+nav a .fa {
+	font-size: 2em;
+	color: #fe3b5b;
 }
 
 /* ==============
@@ -230,8 +243,13 @@ section {
 	padding: 0 0 45px;
 }
 
-#contact {
+#work2 {
 	background-color: #fadec8;
+}
+
+#social {
+	padding-top: 2em;
+	text-align: center;
 }
 
 /* ===============
@@ -290,6 +308,25 @@ a.button {
 	border-radius: 2px;
 	text-decoration: none;
 	margin: 1em 0;
+}
+
+a.button .fa {
+	font-size: 1.4em;
+	margin-right: 0.25em;
+}
+
+section a.link {
+	border: 2px solid #fe3b5b;
+	display: inline-block;
+	padding: 0.7em 1.5em;
+	border-radius: 2px;
+	text-decoration: none;
+	margin: 1em 0;
+	margin-left: 1em;
+}
+
+section a.link:hover {
+	border-color: #e33451;
 }
 
 .center {
@@ -414,6 +451,10 @@ li {
         padding: 25px 2%;
         margin-bottom: 0;
     }
+    
+    nav .social a {
+		width: 10%;
+	}
 
     nav li:first-child a {
         margin-left: 0;
