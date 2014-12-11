@@ -265,7 +265,11 @@ section {
 h2 {
 	font-size: 2em;
 	color: #222;
-	margin:0;
+	text-align: center;
+}
+
+#profile h2 {
+	margin-top: 0;
 }
 
 article header {
@@ -365,10 +369,6 @@ article header:after {
 	height:3em;
 }
 
-.diamonds h2 {
-	margin-bottom: 0.2em;
-}
-
 .before, .after {
 	max-width: 48%;
 	margin: 0 1%;
@@ -423,6 +423,10 @@ li {
 	h2 {
 		font-size: 3em;
 	}
+	
+	#profile h2 {
+		text-align: left;
+	}
 
 	.main article h1 {
 	    font-size: 1.8em;
@@ -453,7 +457,7 @@ li {
 
 	.headshot {
 		float: right;
-		margin-top: -4em;
+		margin-top: -9em;
 	}
 }
 
@@ -488,7 +492,6 @@ li {
 	
 	h2 {
 		font-size:4em;
-		margin: 0.5em 0;
 	}
 
     nav a {
