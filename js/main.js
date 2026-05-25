@@ -6,7 +6,7 @@
 			  return window.twttr || (t = { _e: [], ready: function (f) { t._e.push(f) } });
 			}(document, "script", "twitter-wjs"));
 
-
+/*
 			function scrollEffect() {
 			    scrollPos = $(this).scrollTop();
 			    
@@ -30,7 +30,7 @@
 				    $('.header-container').fadeOut();
 			    }
 
-			}
+			}*/
 
 			function capitaliseFirstLetter(string) {
 			    return string.charAt(0).toUpperCase() + string.slice(1);

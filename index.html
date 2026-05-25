@@ -11,115 +11,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<style>
-			html {
-			    font-size: 1em;
-			    line-height: 1.4;
-			}
-			.browsehappy {
-			    margin: 0.2em 0;
-			    background: #ccc;
-			    color: #000;
-			    padding: 0.2em 0;
-			}
-			body {
-			    font: 14px/1.3 'Raleway', Helvetica, Helvetica Neue, Arial, sans-serif;
-			}
-			
-			.wrapper {
-				width: 90%;
-			    margin: 0 5%;
-			}
-			.title {
-				font-size: 1.3em;
-				text-align: center;
-				float:left;
-			
-			    margin-left: 1%;
-			    width: 37%;
-			}
-			
-			.title span {
-				display:block;
-			}
-			
-			.title a, .title a:hover {
-				color:#222;
-				text-decoration:none;
-				display:block;
-			}		
-			.main article h1 {
-			    font-size: 1.4em;
-			    line-height: 1.2;
-			    font-weight: normal;
-
-			}
-			.main article h1 .welcome, .title span, h2, h3, .melina {
-				font-family: 'Montserrat', 'Raleway', Helvetica, Helvetica Neue, Arial, sans-serif;
-			}
-			
-			.main article h1 span {
-				display: block;
-				color:#222;
-			}
-			
-			.main article h1 .welcome {
-				font-weight: 700;
-				color: #fe3b5b;
-				margin-bottom: 0.3em;
-				font-size: 2em;
-			}
-			article header {
-				text-align: center;
-				height: 60vh;
-				padding-top: 30vh;
-				border-bottom: 45px solid #e46379;
-				position: relative;
-				background-color:#fadec8;
-				color: #222;	
-			}
-			.fa-arrow-down {
-				margin-left:0.25em;
-				font-size:1.3em;
-				vertical-align:middle;
-			}
-			
-			.melina {
-				font-size: 1.15em;
-			}
-			
-			a {
-				color:#fe3b5b;
-			}
-			
-			a:hover {
-				color: #e33451;
-			}
-			.header-container {
-				display: none;
-			}
-			.glitter {
-				background-image:url('img/bg-glitter.jpg');
-				padding-top: 3em;
-				margin-bottom:2em;
-				height: 3em;
-			}
-
-			@media only screen and (min-width: 768px) {
-				body {
-				    font: 18px/26px 'Raleway', Helvetica, Helvetica Neue, Arial, sans-serif;
-				}
-			}
-
-			@media only screen and (min-width: 1020px) {
-				.main article h1 {
-				    font-size: 2.6em;
-				}
-			
-			}
+		
 		</style>
+		<link rel="stylesheet" href="css/normalize.min.css">
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
         <!--[if lt IE 9]>
             <script src="js/vendor/html5-3.6-respond-1.1.0.min.js"></script>
         <![endif]-->
+		<script src="https://kit.fontawesome.com/6576d8f2ef.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -128,17 +30,12 @@
         <div id="top"></div>
 
         <div class="header-container">
-            <header class="clearfix">
-                <h1 class="title"><a href="#top" class="link">Melina <span>Szarfsztejn</span></a></h1>
+            <header class="clearfix magenta">
+                <span class="title"><a href="#top" class="link">Melina</a></span>
                 <nav>
                     <ul>
-                        <li><a href="#profile" class="profile">profile</a></li>
-                        <li><a href="#work" class="work">work</a></li>
-                        <!--li><a href="#contact" class="contact">Contact</a></li-->
-                        <li class="social">
-                        	<a href="#social" class="twitter"><i class="fa fa-twitter-square"></i><span>Twitter</span></a>
-                        	<a href="http://ar.linkedin.com/in/melinaszarf" class="linkedin" target="_linkedin"><i class="fa fa-linkedin-square"></i><span>Linked In</span></a>
-                        </li>
+                        <li><a href="case-studies.html" class="work">Case studies</a></li>
+                        <li><a href="#contact" class="contact">Contact me</a></li>
                     </ul>
                 </nav>
             </header>
@@ -146,169 +43,64 @@
 
         <div class="main-container">
             <div class="main clearfix">
+                <article class="home">
+                    <header class="grey">
+						<div class="wrapper clearfix">
+	                        <h1><span class="welcome">Hey, I'm Melina</span> <span>and I design user experiences.</span></h1>
 
-                <article>
-                    <header>
-                        <h1><span class="welcome">Hi.</span> <span>My name is Melina</span> and I design web experiences.</h1>
-                        <a href="#profile" class="link">About me<i class="fa fa-arrow-down"></i></a>
-                    </header>
-                    <section id="profile">
-						<div class="fullscreen background parallax glitter" data-img-width="1400" data-img-height="1050" data-diff="100">
+							<div class="headshot-container">
+								<img src="img/melina.png" alt="Melina Szarfsztejn" class="headshot">
+							</div>
 						</div>
-	                    <div class="wrapper clearfix narrow">
-   	                        <h2>profile</h2>
+					</header>
 
-	                        <img src="img/melina.jpg" alt="Melina Szarfsztejn headshot" class="headshot">
-	                        
-	                        <p><span class="melina">Melina Szarfsztejn,</span><br>
-							Buenos Aires, Argentina<br>
-							32 years old</p>
-	                        
-	                        <p>Technical Lead & Project Manager for both Web Design & Front-end Development, with fifteen years of hands-on experience and a background in Fine Arts, Graphic Design, Photography and Cinematography.</p>
-	                        <p>My specialties are Web Products Scoping, User Interface Design and User Experience Analysis for online applications, Front-End performance Analysis, Responsive Web Design and Accessible/Semantic HTML5+CSS.</p>
-	                        <p>Certified as Scrum Master in November 2011, I've also attended several Open Spaces organized by Ágiles (the LatAm agile professional community).<br>
-	                        More recently I completed the Executive Program on User Experience Design at ITBA in August 2014. After attending the <a href="http://www.ux2013.com.ar/" target="_UX13">2013 UX Day in Buenos Aires</a> I started to participate in the local chapters of the professional associations <a href="http://uxpa.org.ar/" title="Asociación de Profesionales de la Experiencia de Usuario" target="uxpa">UXPA</a> and <a href="http://www.ixda.com.ar/" title="Asociación de Diseño de Interacción Buenos Aires" target="ixda">IxDA</a>.<br>
-	                        In November I also attended the brilliant <a href="http://isa.ixda.org/2014/" target="_ISA14">Interaction South America 2014</a> conference which was held in Buenos Aires for the first time this year.</p>
-	                        <p>Passionate about keeping up with the latest trends in design and new technologies, I'm constantly researching everything HTML5, mobile first RWD and iOS/Android design patterns.</p>
-	                        <p class="center">
-	                        	<a href="http://ar.linkedin.com/in/melinaszarf" class="button linkedin" target="_linkedin"><i class="fa fa-linkedin"></i> Read my complete résumé</a>
-	                        	<a href="#work" class="link">See what I do</a>
-	                        </p>
-	                    </div>
-						<div class="fullscreen background parallax diamonds" data-img-width="1350" data-img-height="1050" data-diff="100"></div>
-                    </section>
-
-			        <link rel="stylesheet" href="css/normalize.min.css">
-			        <link rel="stylesheet" href="css/main.min.css">
-			        <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-
-                    <section id="work">
-					    <div class="wrapper clearfix narrow">
-   	                        <h2>work</h2>
-					    </div>
-	                    <div class="wrapper clearfix">
-	                        <h3>DeMotores.com Responsive Relaunch</h3>
-	                        <a href="img/dm-home-old.jpg" class="before view" rel="redesign"><img src="img/dm-before.jpg" alt="DeMotores.com before" /></a>
-	                        <a href="img/dm-home-new.jpg" class="after view" rel="redesign"><img src="img/dm-after.jpg" alt="DeMotores.com after" /></a>
-							<div class="hidden">
-				            	<a href="img/dm-listados-old.jpg" class="view" rel="redesign"></a>
-				            	<a href="img/dm-listados-new.jpg" class="view" rel="redesign"></a>
-				            	<a href="img/dm-ficha-usados-old.jpg" class="view" rel="redesign"></a>
-				            	<a href="img/dm-ficha-usados-new.jpg" class="view" rel="redesign"></a>
-				            </div>
-	                        <div class="wrapper clearfix narrow">
-		                        <p>An Awareness Survey in 2013 enlightened us in that the Top of Mind among users which had visited DeMotores was the lowest in the category, with a 14%.</p>
-		                        <p>Based on this insight and the fact that the site had a look&feel that hadn't been updated since 2009, we started a journey of redesigning the entire site with the short term milestones of Listing - Item - Home; the latter also including a general layout redesign.</p>
-		                        <p>In my position as Design & Front-End development Coordinator I was in charge of providing the vision for the complete redesign of the marketplace, which was relaunched on January 15th, 2014.</p>
-	                        </div>
-	                        
-	                        <img src="img/dm-responsive.jpg" alt="DeMotores.com responsive" class="rwd">
-	                        
-	                        <div class="wrapper clearfix narrow">
-		                        <p>Along with the redesign, I pitched a Responsive approach to take the critical workflow of the marketplace to a solid mobile experience and at the same time enhance its FE performance, through a CSS rewrite and the creation of what we called an "asset server" (a grails-built service which returns concatenated and minified assets) which allowed us to serve different assets for different screen widths.</p>
-		                        <p>My project was approved and I lead it to a successful release on June 4th, 2014.</p>
-	                        </div>
-
-	                        <h3>DeMotores.com iOS and Android Native Apps</h3>
-	                        
-	                        <img src="img/dm-native.jpg" alt="DeMotores.com Native Applications" class="native">
-	                        
-	                        <p>We considered necessary to reinforce the consistent application of the brand book on all channels, in order to ensure uniform and standardized design to help improve DeMotores' brand recall.</p>
-	                        <p>When I started with the company, DeMotores’ apps were both functionally and visually modeled after iOS 4. With the imminent release of iOS7, I redesigned every user interface of both apps considering the particularities of each operative system and our own brandbook, in order to achieve the most intuitive interactions for each type of user.</p>
-	                        <h4>Significant Achievements</h4>
-	                        <ul>
-		                        <li>+ 30% conversion rate</li>
-		                        <li>Improvement in engagement: screen views per session = + 70% (14 vs 8)</li>
-		                        <li>We doubled the use of  the Watch list and social sharing features.</li>
-	                        </ul>
-	                    </div>
-                    </section>
-                    <section id="work2">
-	                    <div class="wrapper clearfix">
-	                        <div class="col-x2">
-		                        <h3>Web Applications</h3>
-		                        <div class="col">
-			                        <a href="img/funnely-ampliada1.png" rel="funnely" class="view"><img src="img/funnely-small.png" alt="Funne.ly" class="rounded"></a>
-			                        <p><a href="http://www.funne.ly/" target="funnely">Funnely</a> is an online assistant that will help online stores' owners create, manage and optimize their marketing campaigns.</p>
-			                        <p>I collaborated with the redesign and font-end code refactoring of its critical workflows (account setup, campaign setup) with a mobile-first, responsive approach.</p>
-							          <div class="hidden">
-							              <a class="view" href="img/funnely-ampliada2.png" rel="funnely"></a>
-							          </div>
-		                        </div>
-		                        
-		                        <div class="col">
-		                        	<a href="img/pactanda-ampliada1.png" rel="pactanda" class="view"><img src="img/pactanda-small.png" alt="Pactanda" class="rounded"></a>
-			                        <p>Solving eCommerce disputes has never been this swift, easy and cost-effective!</p>
-			                        <p>I collaborated as Art Director for <a href="http://www.pactanda.com/" target="pactanda">Pactanda</a>'s web application visual strategy.</p>
+					<div class="flex-container">
+						<div class="column-small yellow">
+							<div class="cyan"></div>
+						</div>
+						<div class="column-large">
+							<section id="profile">
+								<!--div class="fullscreen background parallax glitter" data-img-width="1400" data-img-height="1050" data-diff="100">
+								</div-->
+							
+								<div class="summary">
+									<p><span>I'm an UX specialist with 20+ years of experience</span> in web and mobile design.</p>
+									<p>Proven track record leading cross-functional teams in corporate environments —including startups and a unicorn of 70,000+ employees— as well as planning and executing independent projects.</p>
+									<p><span>Expert in research, user-centered design, and product strategy</span>, with experience guiding products from concept to deployment and <span>developing design teams</span>.</p>
 								</div>
-	                        </div>
-	                        <div class="col-x2">
-		                        <h3>Retailer Websites</h3>
-		                        <div class="col">
-		                        	<a href="img/foglia-site-home-00.jpg" rel="foglia" class="view"><img src="img/foglia-small.jpg" alt="Foglia" class="rounded"></a>
-			                        <p>Foglia is one of <a href="http://www.dafiti.com.ar" target="dafiti">Dafiti's</a> private brands, oriented to independent women in their 30s - 40s.</p>
-			                        <p>While serving as Frontend Developer & UX analyst, I made an institutional website for each of their private brands in order to add to the identity of the brands outside of what the users would find in the online store.</p>
-									<div class="hidden">
-										<a class="view" href="img/foglia-site-coleccion-00.jpg" rel="foglia"></a>
-										<a class="view" href="img/foglia-site-campania-00.jpg" rel="foglia"></a>
-										<a class="view" href="img/foglia-site-campania-01.jpg" rel="foglia"></a>
-										<a class="view" href="img/foglia-site-marca-00.jpg" rel="foglia"></a>
-										<a class="view" href="img/foglia-site-sis-00.jpg" rel="foglia"></a>
+							</section>
+							<section id="experience">
+								<div class="white experience">
+									<h2>Professional Experience</h2>
+									<ul>
+										<li><span>Mercado Libre – Senior UX Analyst to Team Leader to UX Tech Lead</span> | 7 yrs 5 mos 09/2017 - 01/2025 </p>
+										<li><span>YOP – Design Coordinator</span> | 2 yrs 1 mo 05/2015 - 06/2017</p>
+										<li><span>Dridco – Product Design Coordinator</span> | 1 yr 8 mos 04/2013 - 01/2015</p>
+										<li><span>Dafiti – Front-End Developer & UX Analyst</span> | 1 yr 03/2012 - 03/2013</p>
+										<li><span>HRsmart – Senior Web Developer to Manager of Web Design & Development</span> | 5 yrs 2 mo 12/2006 - 02/2012</p>
+										<li><span>Freelance Web Design & Development</span> | 8 yrs 1999 - 2006</p>
+									</ul>
+									<div>
+										<a href="Melina Szarfsztejn - UX Design CV - EN.pdf" target="_blank" class="button"> Download my CV</a>
+										<a href="http://ar.linkedin.com/in/melinaszarf" class="link linkedin" target="_linkedin">Read more on LinkedIn <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
 									</div>
 								</div>
-	
-		                        <div class="col">
-		                        	<a href="img/missrock-site3-campania-00.jpg" rel="missrock" class="view"><img src="img/missrock-small.jpg" alt="Miss Rock" class="rounded"></a>
-			                        <p>Miss Rock is another of Dafiti's shoe private brands, targeted to teenagers and women in their early 20s.</p>
-			                        <p>This is another institutional website that I designed to help consolidate the branding efforts.</p>
-									<div class="hidden">
-										<a class="view" href="img/missrock-site3-coleccion-00.jpg" rel="missrock"></a>
-										<a class="view" href="img/missrock-site3-marca-00.jpg" rel="missrock"></a>
-									</div>
-		                        </div>
-	                        </div>
-	                        <div class="col-x2">
-		                        <h3>Professional/Personal Websites</h3>
-		                        <div class="col">
-		                        	<a href="img/rodrigo-home.jpg" rel="suarez" class="view"><img src="img/suarez-small.jpg" alt="Rodrigo Suarez Arquitectura" class="rounded"></a>
-			                        <p>Rodrigo Suarez Arquitectura is the institutional website for a small architecture firm.</p>
-			                        <p>I designed and coded this one page site in December 2014.</p>
-									<div class="hidden">
-										<a class="view" href="img/rodrigo-perfil.jpg" rel="suarez"></a>
-										<a class="view" href="img/rodrigo-obras.jpg" rel="suarez"></a>
-									</div>
-		                        </div>
-	
-		                        <div class="col">
-		                        	<a href="img/luba-home.jpg" rel="luba" class="view"><img src="img/luba-small.jpg" alt="Magdalena Yomha" class="rounded"></a>		                        
-			                        <p><a href="http://www.magdalenayomha.com.ar" target="luba">Magdalena Yomha</a> is the personal website of a playwright who needed a way to show her resume and her plays' synopses.</p>
-			                        <p>It's another one page site which I designed and coded in October 2014.</p>
-									<div class="hidden">
-										<a class="view" href="img/luba-luba.jpg" rel="luba"></a>
-										<a class="view" href="img/luba-ficha.jpg" rel="luba"></a>
-										<a class="view" href="img/luba-video.jpg" rel="luba"></a>
-										<a class="view" href="img/luba-galeria.jpg" rel="luba"></a>
-										<a class="view" href="img/luba-cv.jpg" rel="luba"></a>
-										<a class="view" href="img/luba-contacto.jpg" rel="luba"></a>
-									</div>
-		                        </div>
-	                        </div>
-	                    </div>
-                    </section>
-                    <section id="social">
-                    	<h2>find me</h2>
-   	                    <div class="wrapper clearfix">
-	                        <a class="twitter-timeline" data-tweet-limit="4" href="https://twitter.com/melina_sz" data-widget-id="542715366942965760">Tweets by @melina_sz</a>
-   	                    </div>
-                    </section>
+								<!--div class="fullscreen background parallax diamonds" data-img-width="1350" data-img-height="1050" data-diff="100"></div-->
+							</section>
+						</div>
+					</div>
                 </article>
             </div> <!-- #main -->
         </div> <!-- #main-container -->
 
         <div class="footer-container">
-            <footer class="wrapper">
-                © Melina Szarfsztejn 2014<br>
-                Buenos Aires, Argentina
+            <footer class="wrapper" id="contact">
+				<h2>Contact me</h2>
+				<div class="wrapper clearfix">
+					<p><a href="mailto:melina.sz@gmail.com">melina.sz@gmail.com</a> | <a href="tel:+5491163659216"></a>+54 9 11 6365 9216</a> | <a href="http://ar.linkedin.com/in/melinaszarf" target="_blank">LinkedIn</a>
+					<br>
+					Ciudad de Buenos Aires 🇦🇷</p>
+				</div>
             </footer>
         </div>
 
@@ -318,31 +110,5 @@
 		<script src="js/vendor/view.min.js"></script>
 
         <script src="js/main.js"></script>
-        
-        <script>
-   			  WebFontConfig = {
-		    google: { families: [ 'Raleway:400,700:latin', 'Montserrat:400,700:latin' ] }
-		  };
-		  (function() {
-		    var wf = document.createElement('script');
-		    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-		      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-		    wf.type = 'text/javascript';
-		    wf.async = 'true';
-		    var s = document.getElementsByTagName('script')[0];
-		    s.parentNode.insertBefore(wf, s);
-		  })();
-
-        </script>
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
-        </script>
     </body>
 </html>
