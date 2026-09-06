@@ -1,0 +1,948 @@
+/* =========================================================
+   DESIGN TOKENS — change once, applied everywhere
+   ========================================================= */
+:root {
+  /* Colors */
+  --color-red:        #e71d57;   /* header / footer */
+  --color-dark:       #434343;   /* hero bg, DeMotores card */
+  --color-near-black: #222222;   /* primary text */
+  --color-white:      #ffffff;
+  --color-cyan:       #31c1d7;   /* accent rect, LMS card */
+  --color-yellow:     #ffe606;   /* accent rect, 1P card */
+  --color-green:      #93c03c;   /* bio section */
+  --color-surface:    #fafafa;   /* subtle bg */
+
+  /* Text styles — mobile first (rem, 16px base) */
+  --text-hero:         2.375rem;  /* 38px */
+  --text-hero-lh:      2.875rem;  /* 46px */
+  --text-hero-sub:     1.25rem;   /* 20px */
+  --text-hero-sub-lh:  1.625rem;  /* 26px */
+  --text-h2:           1.5rem;    /* 24px */
+  --text-h3:           1.5rem;    /* 24px */
+  --text-cs-title:     1.75rem;   /* 28px */
+  --text-body:         1rem;      /* 16px */
+  --text-body-lh:      1.375rem;  /* 22px */
+  --text-small:        0.9375rem; /* 15px */
+  --text-caption:      0.875rem;  /* 14px */
+  --text-btn:          0.875rem;  /* 14px */
+  --text-btn-lg:       1rem;      /* 16px (header on mobile) */
+
+  /* Font weights */
+  --w-regular: 400;
+  --w-medium:  500;
+  --w-bold:    700;
+
+  /* Font family */
+  --font: 'Inter', sans-serif;
+}
+
+/* Desktop overrides */
+@media (min-width: 1024px) {
+  :root {
+    --text-hero:      3.125rem;  /* 50px */
+    --text-hero-lh:   normal;
+    --text-hero-sub:  1.875rem;  /* 30px */
+    --text-hero-sub-lh: normal;
+    --text-h2:        2rem;      /* 32px */
+    --text-cs-title:  3.125rem;  /* 50px */
+    --text-body:      1.125rem;  /* 18px */
+    --text-body-lh:   normal;
+    --text-small:     1rem;      /* 16px */
+    --text-btn-lg:    1.125rem;  /* 18px */
+  }
+}
+
+/* =========================================================
+   GLOBAL RESET & BASE
+   ========================================================= */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  color: var(--color-near-black);
+  background: var(--color-white);
+}
+
+img { display: block; max-width: 100%; }
+
+p { margin: 0; }
+
+ul, ol { margin: 0; padding: 0; }
+
+h1, h2, h3 { margin: 0; }
+
+/* Screen-reader only */
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  background: var(--color-white);
+  color: var(--color-near-black);
+  padding: .5rem 1rem;
+  border-radius: 4px;
+  font-family: var(--font);
+  font-size: var(--text-btn);
+  z-index: 200;
+  text-decoration: none;
+}
+.skip-link:focus {
+  position: fixed;
+  left: 1rem; top: 1rem;
+  width: auto; height: auto;
+  overflow: visible;
+}
+
+/* =========================================================
+   BUTTONS
+   Figma components: button (outline pill) / button (text link)
+   ========================================================= */
+.btn-outline {
+  display: inline-flex;
+  align-self: flex-start;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  gap: .625rem;
+  padding: .625rem 1.75rem;     /* 10px 28px */
+  border: 2px solid var(--color-near-black);
+  border-radius: 70px;
+  font-family: var(--font);
+  font-size: var(--text-btn);
+  font-weight: var(--w-medium);
+  line-height: normal;
+  color: var(--color-near-black);
+  background: transparent;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: opacity .15s;
+}
+.btn-outline:hover, .btn-outline:focus-visible { opacity: .75; }
+
+/* Large variant — desktop experience / header on desktop */
+.btn-outline-lg {
+  padding: 1rem 4rem;
+  font-size: var(--text-btn-lg);
+}
+
+/* White variant — on dark / red bg */
+.btn-outline-white {
+  border-color: var(--color-white);
+  color: var(--color-white);
+}
+
+/* Text link with external icon */
+.btn-text {
+  display: inline-flex;
+  align-items: center;
+  gap: .625rem;
+  padding: .5rem 0;
+  border: none;
+  background: transparent;
+  font-family: var(--font);
+  font-size: var(--text-btn);
+  font-weight: var(--w-regular);
+  color: var(--color-near-black);
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.btn-text:hover, .btn-text:focus-visible { opacity: .75; }
+.btn-text-lg { font-size: var(--text-btn-lg); }
+.btn-text svg { flex-shrink: 0; }
+
+/* =========================================================
+   SITE HEADER
+   Figma: Header — Left (logo) + Right (Case studies + Contact me)
+   ========================================================= */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--color-red);
+  width: 100%;
+  padding-top: env(safe-area-inset-top);
+}
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+@media (min-width: 1024px) {
+  .site-header__inner { padding: 1rem 5rem; }
+}
+
+/* Figma: Left — "Melina" logo */
+.site-header__logo {
+  font-family: var(--font);
+  font-size: 1.125rem;
+  font-weight: var(--w-regular);
+  color: var(--color-white);
+  text-decoration: none;
+  line-height: normal;
+  padding: .75rem 0;
+}
+.site-header__logo:hover { opacity: .85; }
+
+/* Figma: Right — nav list */
+.site-header__nav {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+}
+@media (min-width: 1024px) {
+  .site-header__nav { gap: 3rem; }
+}
+.site-header__nav a,
+.site-header__nav-link {
+  font-family: var(--font);
+  font-size: 1.125rem;
+  font-weight: var(--w-regular);
+  color: var(--color-white);
+  text-decoration: none;
+  padding: .75rem 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+.site-header__nav a:hover,
+.site-header__nav-link:hover { opacity: .85; }
+
+/* Contact me button — smaller on mobile, larger on desktop */
+.site-header__nav .btn-outline {
+  padding: .625rem 1.75rem;
+  font-size: var(--text-btn);
+}
+@media (min-width: 1024px) {
+  .site-header__nav .btn-outline {
+    padding: 1rem 4rem;
+    font-size: var(--text-btn-lg);
+  }
+}
+
+/* =========================================================
+   SITE FOOTER
+   Figma: Footer — red bg, centered contact info
+   ========================================================= */
+.site-footer {
+  background: var(--color-red);
+  width: 100%;
+}
+.site-footer__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+@media (min-width: 1024px) {
+  .site-footer__inner {
+    gap: 2rem;
+    padding: 10rem 5rem 11rem;
+  }
+}
+.site-footer__title {
+  font-family: var(--font);
+  font-size: var(--text-h2);
+  font-weight: var(--w-bold);
+  color: var(--color-white);
+  line-height: normal;
+}
+.site-footer__contact {
+  font-family: var(--font);
+  font-size: 1rem;
+  font-weight: var(--w-regular);
+  color: var(--color-white);
+  line-height: 2rem;
+  font-style: normal;
+}
+@media (min-width: 1024px) {
+  .site-footer__contact { font-size: 1.125rem; }
+}
+.site-footer__contact a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+.site-footer__contact a:hover { opacity: .85; }
+
+/* =========================================================
+   HOME — HERO
+   Figma: Hero — Heading (dark bg) + Photo (circle) + bio section
+   ========================================================= */
+.hero {
+  background: var(--color-dark);
+  position: relative;
+  width: 100%;
+}
+
+/* Figma: Heading / Title */
+.hero__text {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  padding: 3rem 1.5rem 0;
+}
+@media (min-width: 1024px) {
+  .hero__text { padding: 10rem 5rem 5.25rem; gap: 0; }
+}
+.hero__title {
+  font-family: var(--font);
+  font-size: var(--text-hero);
+  font-weight: var(--w-bold);
+  line-height: var(--text-hero-lh);
+  color: var(--color-white);
+}
+.hero__subtitle {
+  font-family: var(--font);
+  font-size: var(--text-hero-sub);
+  font-weight: var(--w-regular);
+  line-height: var(--text-hero-sub-lh);
+  color: var(--color-white);
+  opacity: .9;
+}
+@media (min-width: 1024px) { .hero__subtitle { opacity: 1; } }
+
+/* Figma: Photo — Melina-Headshot in ellipse */
+.hero__photo-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+}
+@media (min-width: 1024px) {
+  .hero__photo-wrapper {
+    position: absolute;
+    right: 5rem;
+    top: 5rem;
+    padding: 0;
+  }
+}
+.hero__photo-circle {
+  width: 13.75rem;   /* 220px mobile */
+  height: 13.75rem;
+  border-radius: 50%;
+  border: 2px solid var(--color-white);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+@media (min-width: 1024px) {
+  .hero__photo-circle { width: 34.375rem; height: 34.375rem; }  /* 550px */
+}
+.hero__photo-circle img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* Figma: Rectangles (cyan + yellow) + Content1 (green bio) */
+.hero__bio-layout {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 1024px) {
+  .hero__bio-layout { flex-direction: row; }
+}
+
+/* Figma: Rectangles */
+.hero__rectangles {
+  display: flex;
+  flex-direction: row;
+  height: 3rem;   /* 48px mobile — horizontal stripe */
+  width: 100%;
+}
+@media (min-width: 1024px) {
+  .hero__rectangles {
+    flex-direction: column;
+    width: 15rem;  /* 240px */
+    height: auto;
+    flex-shrink: 0;
+  }
+}
+.hero__rect-cyan  { background: var(--color-cyan);   flex: 1; }
+.hero__rect-yellow { background: var(--color-yellow); flex: 1; }
+@media (min-width: 1024px) {
+  .hero__rect-cyan  { height: 15rem; flex: none; }
+  .hero__rect-yellow { height: 15rem; flex: none; }
+}
+
+/* Figma: Content1 — green bio */
+.hero__bio-content {
+  background: var(--color-green);
+  padding: 3rem 1.5rem;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+@media (min-width: 1024px) {
+  .hero__bio-content { padding: 6rem; }
+}
+.hero__bio-text {
+  font-family: var(--font);
+  font-size: var(--text-body);
+  font-weight: var(--w-regular);
+  line-height: var(--text-body-lh);
+  color: var(--color-near-black);
+  max-width: 30.5rem;
+}
+.hero__bio-text p + p { margin-top: 1rem; }
+
+/* =========================================================
+   HOME — EXPERIENCE SECTION
+   Figma: ExperienceSection — yellow left strip + white content
+   ========================================================= */
+.experience__layout {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 1024px) {
+  .experience__layout { flex-direction: row; }
+}
+
+/* Figma: Yellow rectangle accent */
+.experience__accent {
+  background: var(--color-yellow);
+  height: 2rem;     /* 32px stripe on mobile */
+  width: 100%;
+  flex-shrink: 0;
+}
+@media (min-width: 1024px) {
+  .experience__accent { width: 15rem; height: auto; align-self: stretch; }
+}
+
+/* Figma: Content — white area */
+.experience__content {
+  background: var(--color-white);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 3rem 1.5rem;
+}
+@media (min-width: 1024px) {
+  .experience__content { gap: 3rem; padding: 6rem; }
+}
+.experience__title {
+  font-family: var(--font);
+  font-size: var(--text-h2);
+  font-weight: var(--w-bold);
+  line-height: normal;
+  color: var(--color-near-black);
+}
+
+/* Figma: experience entries */
+.experience__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  font-family: var(--font);
+  font-size: var(--text-small);
+  line-height: 1.5rem;
+  color: var(--color-near-black);
+}
+@media (min-width: 1024px) {
+  .experience__list { font-size: var(--text-body); line-height: normal; }
+}
+
+/* Figma: Buttons row */
+.experience__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+}
+@media (min-width: 1024px) {
+  .experience__actions { flex-direction: row; align-items: center; gap: 2rem; }
+}
+
+/* =========================================================
+   CASE STUDIES — FEATURED CARDS
+   Figma: Case-Study-Card (4 featured, alternating text/image)
+   ========================================================= */
+.cs-card { width: 100%; }
+
+.cs-card__inner {
+  display: flex;
+  flex-direction: column;
+  max-width: 77.75rem;  /* 1244px */
+  margin: 0 auto;
+}
+@media (min-width: 1024px) {
+  .cs-card__inner      { flex-direction: row; }
+  .cs-card--rev .cs-card__inner { flex-direction: row-reverse; }
+}
+
+/* Text side */
+.cs-card__text {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+}
+@media (min-width: 1024px) {
+  .cs-card__text {
+    flex: 0 0 38.875rem;
+    min-height: 35.625rem;
+    padding: 5rem 3rem 5rem 2rem;
+  }
+  .cs-card--rev .cs-card__text { padding: 5rem 2rem 5rem 3rem; }
+}
+
+.cs-card__title {
+  font-family: var(--font);
+  font-size: var(--text-cs-title);
+  font-weight: var(--w-bold);
+  line-height: normal;
+}
+.cs-card__subtitle {
+  font-family: var(--font);
+  font-size: var(--text-body);
+  font-weight: var(--w-regular);
+  line-height: normal;
+}
+
+/* Image side */
+.cs-card__image {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 16rem;
+}
+@media (min-width: 1024px) {
+  .cs-card__image { flex: 0 0 38.875rem; min-height: 35.625rem; }
+}
+.cs-card__image img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ── Card color themes ─────────────────────────────────── */
+/* Figma: cyan left (text) / surface right (image) */
+.cs-card--cyan .cs-card__text  { background: var(--color-cyan); }
+.cs-card--cyan .cs-card__image { background: var(--color-surface); }
+@media (min-width: 1024px) {
+  .cs-card--cyan {
+    background: linear-gradient(90deg, var(--color-cyan) 50%, var(--color-surface) 50%);
+  }
+  .cs-card--cyan .cs-card__text,
+  .cs-card--cyan .cs-card__image { background: transparent; }
+}
+
+/* Figma: surface left (image) / yellow right (text) — reversed */
+.cs-card--yellow .cs-card__text  { background: var(--color-yellow); }
+.cs-card--yellow .cs-card__image { background: var(--color-surface); }
+@media (min-width: 1024px) {
+  .cs-card--yellow {
+    background: linear-gradient(90deg, var(--color-surface) 50%, var(--color-yellow) 50%);
+  }
+  .cs-card--yellow .cs-card__text,
+  .cs-card--yellow .cs-card__image { background: transparent; }
+}
+
+/* Figma: green left (text) / surface right (image) */
+.cs-card--green .cs-card__text  { background: var(--color-green); }
+.cs-card--green .cs-card__image { background: var(--color-surface); }
+@media (min-width: 1024px) {
+  .cs-card--green {
+    background: linear-gradient(90deg, var(--color-green) 50%, var(--color-surface) 50%);
+  }
+  .cs-card--green .cs-card__text,
+  .cs-card--green .cs-card__image { background: transparent; }
+}
+
+/* Figma: surface left (image) / dark right (text) — reversed */
+.cs-card--dark .cs-card__text  { background: var(--color-dark); color: var(--color-white); }
+.cs-card--dark .cs-card__image { background: var(--color-surface); }
+@media (min-width: 1024px) {
+  .cs-card--dark {
+    background: linear-gradient(90deg, var(--color-surface) 50%, var(--color-dark) 50%);
+  }
+  .cs-card--dark .cs-card__text,
+  .cs-card--dark .cs-card__image { background: transparent; }
+}
+
+/* =========================================================
+   OLDER PROJECTS
+   Figma: SectionContainer → Category-Grid → Older-Project-Card
+   ========================================================= */
+.older-projects { padding: 5rem 1.5rem; }
+@media (min-width: 1024px) {
+  .older-projects {
+    padding: 5rem 32px;
+    max-width: 77.75rem;
+    margin: 0 auto;
+  }
+}
+
+.older-projects__title {
+  font-family: var(--font);
+  font-size: var(--text-cs-title);
+  font-weight: var(--w-bold);
+  color: var(--color-near-black);
+  margin-bottom: 2rem;
+}
+
+.category-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+@media (min-width: 1024px) {
+  .category-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem 2rem;
+  }
+}
+
+.category-group { width: 100%; }
+@media (min-width: 1024px) {
+  .category-group {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: auto;
+  }
+}
+
+.category-group__title {
+  font-family: var(--font);
+  font-size: var(--text-h3);
+  font-weight: var(--w-bold);
+  color: var(--color-near-black);
+  padding: .5rem 0;
+}
+
+.project-card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+/* Figma: Older-Project-Card */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: left;
+}
+.project-card .btn-outline { align-self: center; }
+
+/* Figma: Image — circle */
+.project-card__circle {
+  width: 8rem; height: 8rem;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--color-surface);
+  flex-shrink: 0;
+}
+@media (min-width: 1024px) {
+  .project-card__circle { width: 100%; aspect-ratio: 1; height: auto; }
+}
+.project-card__circle img { width: 100%; height: 100%; object-fit: cover; }
+
+.project-card__desc {
+  font-family: var(--font);
+  font-size: var(--text-caption);
+  font-weight: var(--w-regular);
+  color: var(--color-near-black);
+  line-height: 1.375rem;
+  text-align: left;
+}
+
+/* =========================================================
+   CASE STUDY DETAIL — HERO
+   Figma: CaseStudyHero — dark bg, title + description + metadata
+   ========================================================= */
+.cs-hero {
+  background: var(--color-dark);
+  width: 100%;
+  padding: 3rem 1.5rem;
+}
+@media (min-width: 1024px) { .cs-hero { padding: 5rem 3rem; } }
+
+.cs-hero__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+@media (min-width: 1024px) {
+  .cs-hero__inner { flex-direction: row; gap: 0; }
+}
+
+.cs-hero__title-col { flex: 1; }
+.cs-hero__meta-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+@media (min-width: 1024px) {
+  .cs-hero__meta-col { padding-left: 2.3125rem; padding-top: 0; }
+}
+
+.cs-hero__title {
+  font-family: var(--font);
+  font-size: var(--text-cs-title);
+  font-weight: var(--w-bold);
+  line-height: normal;
+  color: var(--color-white);
+}
+
+.cs-hero__desc {
+  font-family: var(--font);
+  font-size: 1rem;
+  font-weight: var(--w-regular);
+  line-height: 1.375rem;
+  color: var(--color-white);
+  padding-top: 1rem;
+}
+.cs-hero__desc p + p { margin-top: 1rem; }
+
+.cs-hero__meta {
+  font-family: var(--font);
+  font-size: 1rem;
+  font-weight: var(--w-regular);
+  color: var(--color-white);
+  line-height: normal;
+  padding: 1rem 0;
+}
+.cs-hero__meta dt { display: block; }
+.cs-hero__meta dd { display: block; font-weight: var(--w-bold); margin: 0; }
+
+/* =========================================================
+   CASE STUDY DETAIL — SECTIONS
+   Figma: Case-Study-Card sections (text + image rows)
+   ========================================================= */
+.cs-section { width: 100%; }
+.cs-section--alt { background: var(--color-surface); }
+
+.cs-section__inner {
+  display: flex;
+  flex-direction: column;
+  max-width: 77.75rem;
+  margin: 0 auto;
+}
+@media (min-width: 1024px) {
+  .cs-section__inner      { flex-direction: row; }
+  .cs-section--rev .cs-section__inner { flex-direction: row-reverse; }
+}
+
+.cs-section__text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 3rem 1.5rem;
+  justify-content: center;
+}
+@media (min-width: 1024px) {
+  .cs-section__text {
+    flex: 0 0 38.875rem;
+    gap: 3rem;
+    padding: 5rem 3rem 5rem 2rem;
+  }
+  .cs-section--rev .cs-section__text { padding: 5rem 2rem 5rem 3rem; }
+}
+
+.cs-section__title {
+  font-family: var(--font);
+  font-size: var(--text-cs-title);
+  font-weight: var(--w-bold);
+  line-height: normal;
+  color: var(--color-near-black);
+  max-width: 31.125rem;
+}
+
+.cs-section__body {
+  font-family: var(--font);
+  font-size: var(--text-body);
+  font-weight: var(--w-regular);
+  line-height: var(--text-body-lh);
+  color: var(--color-near-black);
+}
+.cs-section__body p + p { margin-top: 1rem; }
+
+.cs-section__achievements {
+  font-family: var(--font);
+  font-size: 1.5rem;
+  font-weight: var(--w-bold);
+  color: var(--color-near-black);
+}
+
+.cs-section__list {
+  font-family: var(--font);
+  font-size: var(--text-body);
+  font-weight: var(--w-regular);
+  color: var(--color-near-black);
+  line-height: var(--text-body-lh);
+  padding-left: 1.6875rem;
+}
+.cs-section__list li + li { margin-top: .25rem; }
+
+.cs-section__image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  min-height: 16rem;
+  background: var(--color-surface);
+}
+@media (min-width: 1024px) {
+  .cs-section__image { flex: 0 0 38.875rem; min-height: 35.625rem; }
+}
+.cs-section__image img { width: 100%; height: 100%; object-fit: contain; padding: 2rem; }
+
+.cs-section__screenshots {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  padding: 1.5rem;
+  width: 100%;
+}
+.cs-section__screenshots img {
+  width: 100%;
+  border-radius: .5rem;
+  box-shadow: 0 0 20px rgba(0,0,0,.5);
+}
+
+/* =========================================================
+   GALLERY MODAL
+   Accessible <dialog> with native radio inputs for carousel
+   ========================================================= */
+.gallery-modal {
+  border: none;
+  padding: 0;
+  width: 92vw;
+  max-width: 72rem;
+  height: 88dvh;
+  max-height: 88dvh;
+  background-color: transparent;
+  overflow: hidden;
+}
+.gallery-modal[open] {
+  display: flex;
+  flex-direction: column;
+}
+.gallery-modal::backdrop { background: rgba(0,0,0,.88); }
+
+.gallery-modal__close-row {
+  display: flex;
+  justify-content: flex-end;
+  padding: .625rem .625rem 0;
+  flex-shrink: 0;
+}
+.gallery-modal__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem; height: 2.25rem;
+  border: 1px solid rgba(255,255,255,.3);
+  border-radius: 50%;
+  background: rgba(0,0,0,.5);
+  font-size: 1.125rem;
+  color: #fff;
+  cursor: pointer;
+  line-height: 1;
+  transition: background .15s;
+  flex-shrink: 0;
+}
+.gallery-modal__close:hover { background: rgba(255,255,255,.15); }
+
+.gallery-modal__body {
+  padding: 0;
+  flex: 1;
+  display: flex;
+  align-items: stretch;
+  min-height: 0;
+}
+
+.gallery-modal__empty {
+  text-align: center;
+  padding: 4rem 2rem;
+  font-family: var(--font);
+  font-size: var(--text-body);
+  color: rgba(255,255,255,.5);
+}
+
+/* Carousel */
+.gallery-carousel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  position: relative;
+  min-height: 0;
+}
+.gallery-slide {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  overflow: hidden;
+}
+.gallery-slide img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Prev / Next — overlaid on image sides */
+.gallery-carousel__controls {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: none;
+  padding: 0 .75rem;
+}
+.gallery-nav-btn {
+  pointer-events: all;
+  display: flex; align-items: center; justify-content: center;
+  width: 3rem; height: 3rem;
+  border: 1px solid rgba(255,255,255,.3);
+  border-radius: 50%;
+  background: rgba(0,0,0,.45);
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+  transition: background .15s;
+  flex-shrink: 0;
+}
+.gallery-nav-btn:hover { background: rgba(0,0,0,.7); }
+.gallery-nav-btn:disabled { opacity: .2; cursor: default; }
+
+.gallery-dots-fieldset { display: none; }
+.gallery-counter { display: none; }
+.gallery-radio { display: none; }
