@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Case Studies — Melina Szarf</title>
+  <meta name="description" content="Case studies by Melina Szarf — UX design projects from Mercado Libre, DeMotores.com, and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- ════════════════════════════════════════════════════
+       HEADER — Figma: Header (Left + Right)
+       ════════════════════════════════════════════════════ -->
+  <header class="site-header" role="banner">
+    <div class="site-header__inner">
+      <a href="/" class="site-header__logo" aria-label="Melina — Home">Melina</a>
+      <nav aria-label="Main navigation">
+        <ul class="site-header__nav">
+          <li>
+            <a href="/case-studies.html" aria-current="page">Case studies</a>
+          </li>
+          <li>
+            <button type="button" class="btn-outline btn-outline-white"
+                    onclick="scrollToFooter()"
+                    aria-label="Contact me — scroll to contact section">
+              Contact me
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ════════════════════════════════════════════════════
+       MAIN
+       ════════════════════════════════════════════════════ -->
+  <main id="main-content">
+
+    <!-- ── FEATURED CASE STUDIES ─────────────────────────
+         Figma: Case-Study-Card × 4 — alternating text/image layout
+         ─────────────────────────────────────────────── -->
+
+    <!-- Card 1: LMS — Figma: cyan left (text) / surface right (image) -->
+    <article class="cs-card cs-card--cyan" aria-labelledby="cs-lms">
+      <div class="cs-card__inner">
+        <div class="cs-card__text">
+          <h2 id="cs-lms" class="cs-card__title">UX for Fulfillment Team Leaders</h2>
+          <p class="cs-card__subtitle">Labor Management System</p>
+          <a href="#" class="btn-outline" data-url="lms"
+             aria-label="View LMS case study">
+            View case study
+          </a>
+        </div>
+        <div class="cs-card__image">
+          <img src="/img/cs-lms.png" alt="Labor Management System — dashboard interface" loading="lazy" style="object-position: top;" />
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 2: 1P Commercial — Figma: surface left (image) / yellow right (text) — reversed -->
+    <article class="cs-card cs-card--yellow cs-card--rev" aria-labelledby="cs-vendor">
+      <div class="cs-card__inner">
+        <div class="cs-card__text">
+          <h2 id="cs-vendor" class="cs-card__title">UX for First Party Commercial Team</h2>
+          <p class="cs-card__subtitle">Vendor Central &amp; Buying Portal</p>
+          <a href="#" class="btn-outline" data-url="vendor"
+             aria-label="View Vendor Central case study">
+            View case study
+          </a>
+        </div>
+        <div class="cs-card__image">
+          <img src="/img/cs-vendor.png" alt="Vendor Central & Buying Portal — interface" loading="lazy" />
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 3: Training — Figma: green left (text) / surface right (image) -->
+    <article class="cs-card cs-card--green" aria-labelledby="cs-training">
+      <div class="cs-card__inner">
+        <div class="cs-card__text">
+          <h2 id="cs-training" class="cs-card__title">Design Skills training program</h2>
+          <p class="cs-card__subtitle">
+            Learning capsules, Heuristics, Cognitive Biases and Goals training sessions
+          </p>
+          <a href="#" class="btn-outline" data-url="materials"
+             aria-label="View Design Skills training materials">
+            View materials
+          </a>
+        </div>
+        <div class="cs-card__image">
+          <img src="/img/cs-training.png" alt="Design Skills training — presentation materials" loading="lazy" />
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 4: DeMotores — Figma: surface left (image) / dark right (text) — reversed -->
+    <article class="cs-card cs-card--dark cs-card--rev" aria-labelledby="cs-demotores">
+      <div class="cs-card__inner">
+        <div class="cs-card__text">
+          <h2 id="cs-demotores" class="cs-card__title">DeMotores.com Relaunch</h2>
+          <p class="cs-card__subtitle">Website &amp; Mobile Apps</p>
+          <a href="/demotores.html" class="btn-outline btn-outline-white"
+             aria-label="View DeMotores.com case study">
+            View case study
+          </a>
+        </div>
+        <div class="cs-card__image">
+          <img src="/img/cs-demotores.png" alt="DeMotores.com — homepage screenshot" loading="lazy" />
+        </div>
+      </div>
+    </article>
+
+    <!-- ── OLDER PROJECTS ─────────────────────────────────
+         Figma: SectionContainer → Category-Grid → Older-Project-Card
+         ─────────────────────────────────────────────── -->
+    <section aria-labelledby="older-title">
+      <div class="older-projects">
+        <h2 id="older-title" class="older-projects__title">Older projects</h2>
+
+        <div class="category-grid">
+
+          <!-- Figma: Category-Group — Web Applications -->
+          <section class="category-group" aria-labelledby="cat-web">
+            <h3 id="cat-web" class="category-group__title">Web Applications</h3>
+            <div class="project-card-grid">
+
+              <!-- Figma: Older-Project-Card — Funnely -->
+              <article class="project-card" aria-labelledby="proj-funnely">
+                <div class="project-card__circle">
+                  <img src="/img/funnely-circle.png" alt="" aria-hidden="true" />
+                </div>
+                <p id="proj-funnely" class="project-card__desc">
+                  <strong>Funnely</strong> was an online assistant that helped online
+                  stores' owners create, manage and optimize their marketing campaigns.<br /><br />
+                  I collaborated with the redesign and front-end code refactoring of its
+                  critical workflows with a mobile-first, responsive approach.
+                </p>
+                <button type="button" class="btn-outline"
+                        data-gallery="funnely"
+                        aria-label="View Funnely gallery">
+                  View gallery
+                </button>
+              </article>
+
+              <!-- Figma: Older-Project-Card — Pactanda -->
+              <article class="project-card" aria-labelledby="proj-pactanda">
+                <div class="project-card__circle">
+                  <img src="/img/pactanda-circle.png" alt="" aria-hidden="true" />
+                </div>
+                <p id="proj-pactanda" class="project-card__desc">
+                  Solving eCommerce disputes has never been this swift, easy and
+                  cost-effective!<br /><br />
+                  I collaborated as Art Director for <strong>Pactanda's</strong>
+                  web application visual strategy.
+                </p>
+                <button type="button" class="btn-outline"
+                        data-gallery="pactanda"
+                        aria-label="View Pactanda gallery">
+                  View gallery
+                </button>
+              </article>
+
+            </div>
+          </section>
+
+          <!-- Figma: Category-Group — Retailer Websites -->
+          <section class="category-group" aria-labelledby="cat-retail">
+            <h3 id="cat-retail" class="category-group__title">Retailer Websites</h3>
+            <div class="project-card-grid">
+
+              <!-- Figma: Older-Project-Card — Foglia -->
+              <article class="project-card" aria-labelledby="proj-foglia">
+                <div class="project-card__circle">
+                  <img src="/img/foglia-circle.png" alt="" aria-hidden="true" />
+                </div>
+                <p id="proj-foglia" class="project-card__desc">
+                  <strong>Foglia</strong> was one of Dafiti's private brands,
+                  oriented to independent women in their 30s–40s.<br /><br />
+                  While serving as Frontend Developer &amp; UX Analyst, I made an
+                  institutional website for each of their private brands to strengthen
+                  brand identity.
+                </p>
+                <button type="button" class="btn-outline"
+                        data-gallery="foglia"
+                        aria-label="View Foglia gallery">
+                  View gallery
+                </button>
+              </article>
+
+              <!-- Figma: Older-Project-Card — Miss Rock -->
+              <article class="project-card" aria-labelledby="proj-missrock">
+                <div class="project-card__circle">
+                  <img src="/img/missrock-circle.png" alt="" aria-hidden="true" />
+                </div>
+                <p id="proj-missrock" class="project-card__desc">
+                  <strong>Miss Rock</strong> is another of Dafiti's shoe private
+                  brands, targeted to teenagers and women in their early 20s.<br /><br />
+                  This is another institutional website I designed to help consolidate
+                  the branding efforts.
+                </p>
+                <button type="button" class="btn-outline"
+                        data-gallery="missrock"
+                        aria-label="View Miss Rock gallery">
+                  View gallery
+                </button>
+              </article>
+
+            </div>
+          </section>
+
+          <!-- Figma: Category-Group — Professional/Personal Websites -->
+          <section class="category-group" aria-labelledby="cat-personal">
+            <h3 id="cat-personal" class="category-group__title">Professional/Personal Websites</h3>
+            <div class="project-card-grid">
+
+              <!-- Figma: Older-Project-Card — Rodrigo Suarez -->
+              <article class="project-card" aria-labelledby="proj-rodrigo">
+                <div class="project-card__circle">
+                  <img src="/img/rodrigo-circle.png" alt="" aria-hidden="true" />
+                </div>
+                <p id="proj-rodrigo" class="project-card__desc">
+                  <strong>Rodrigo Suarez Arquitectura</strong> is the institutional
+                  website for a small architecture firm.<br /><br />
+                  I designed and coded this one-page site in December 2014.
+                </p>
+                <button type="button" class="btn-outline"
+                        data-gallery="rodrigo"
+                        aria-label="View Rodrigo Suarez Arquitectura gallery">
+                  View gallery
+                </button>
+              </article>
+
+              <!-- Figma: Older-Project-Card — Magdalena Yomha -->
+              <article class="project-card" aria-labelledby="proj-magdalena">
+                <div class="project-card__circle">
+                  <img src="/img/magdalena-circle.png" alt="" aria-hidden="true" />
+                </div>
+                <p id="proj-magdalena" class="project-card__desc">
+                  <strong>Magdalena Yomha</strong> was the personal website of a
+                  playwright who needed a way to show her resume and her plays'
+                  synopses.<br /><br />
+                  It's another one-page site I designed and coded in October 2014.
+                </p>
+                <button type="button" class="btn-outline"
+                        data-gallery="magdalena"
+                        aria-label="View Magdalena Yomha gallery">
+                  View gallery
+                </button>
+              </article>
+
+            </div>
+          </section>
+
+        </div><!-- .category-grid -->
+      </div><!-- .older-projects -->
+    </section>
+
+  </main>
+
+  <!-- ════════════════════════════════════════════════════
+       FOOTER — Figma: Footer
+       ════════════════════════════════════════════════════ -->
+  <footer id="site-footer" class="site-footer" aria-label="Contact information">
+    <div class="site-footer__inner">
+      <h2 class="site-footer__title">Contact me</h2>
+      <address class="site-footer__contact">
+        <a href="mailto:melina.sz@gmail.com">melina.sz@gmail.com</a><br />
+        +54 9 11 6365 9216 |
+        <a href="http://ar.linkedin.com/in/melinaszarf"
+           target="_blank" rel="noopener noreferrer">LinkedIn</a><br />
+        Ciudad de Buenos Aires 🇦🇷
+      </address>
+    </div>
+  </footer>
+
+  <!-- ════════════════════════════════════════════════════
+       GALLERY MODAL — <dialog> with native radio carousel
+       Figma: no direct equivalent — accessible gallery dialog
+       ════════════════════════════════════════════════════ -->
+  <dialog id="gallery-modal" class="gallery-modal"
+          aria-labelledby="modal-title-text"
+          oncancel="cancelGallery()">
+
+    <span id="modal-title-text" class="sr-only"></span>
+    <div class="gallery-modal__close-row">
+      <button type="button" class="gallery-modal__close"
+              onclick="closeGallery()" aria-label="Close gallery">✕</button>
+    </div>
+
+    <div class="gallery-modal__body">
+      <!-- Carousel (shown when images exist) -->
+      <div id="gallery-carousel" class="gallery-carousel" hidden>
+        <figure id="gallery-slide" class="gallery-slide" aria-live="polite" aria-atomic="true">
+          <img id="gallery-img" src="" alt="" loading="lazy" />
+        </figure>
+        <div class="gallery-carousel__controls">
+          <button type="button" id="gallery-prev" class="gallery-nav-btn"
+                  onclick="galleryPrev()" aria-label="Previous image">&#8249;</button>
+          <!-- Native radio dots injected by app.js -->
+          <fieldset id="gallery-dots" class="gallery-dots-fieldset">
+            <legend class="sr-only">Select gallery image</legend>
+          </fieldset>
+          <span id="gallery-counter" class="gallery-counter" aria-hidden="true"></span>
+          <button type="button" id="gallery-next" class="gallery-nav-btn"
+                  onclick="galleryNext()" aria-label="Next image">&#8250;</button>
+        </div>
+      </div>
+      <!-- Empty state -->
+      <p id="gallery-empty" class="gallery-modal__empty">
+        Images coming soon — check back later.
+      </p>
+    </div>
+
+  </dialog>
+
+  <script src="/app.js"></script>
+</body>
+</html>

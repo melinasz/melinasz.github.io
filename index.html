@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Melina Szarf — UX Designer</title>
+  <meta name="description" content="Melina Szarf — UX specialist with 20+ years of experience in web and mobile design." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- ════════════════════════════════════════════════════
+       HEADER — Figma: Header (Left + Right)
+       ════════════════════════════════════════════════════ -->
+  <header class="site-header" role="banner">
+    <div class="site-header__inner">
+      <a href="/" class="site-header__logo" aria-label="Melina — Home">Melina</a>
+      <nav aria-label="Main navigation">
+        <ul class="site-header__nav">
+          <li><a href="/case-studies.html">Case studies</a></li>
+          <li>
+            <button type="button" class="btn-outline btn-outline-white"
+                    onclick="scrollToFooter()"
+                    aria-label="Contact me — scroll to contact section">
+              Contact me
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ════════════════════════════════════════════════════
+       MAIN
+       ════════════════════════════════════════════════════ -->
+  <main id="main-content">
+
+    <!-- ── HERO ──────────────────────────────────────────
+         Figma: Hero — Heading (dark bg) + Photo + bio section
+         ─────────────────────────────────────────────── -->
+    <section class="hero" aria-labelledby="hero-title">
+
+      <div class="hero__text">
+        <h1 id="hero-title" class="hero__title">Hey, I'm Melina,</h1>
+        <p class="hero__subtitle">and I design user experiences.</p>
+      </div>
+
+      <!-- Figma: Photo (Melina-Headshot inside ellipse) -->
+      <div class="hero__photo-wrapper">
+        <div class="hero__photo-circle">
+          <img src="/img/melina.png" alt="Melina Szarf, UX designer" width="550" height="550" />
+        </div>
+      </div>
+
+      <!-- Figma: Rectangles (cyan + yellow) + Content1 (green bio) -->
+      <div class="hero__bio-layout">
+        <div class="hero__rectangles" aria-hidden="true">
+          <div class="hero__rect-cyan"></div>
+          <div class="hero__rect-yellow"></div>
+        </div>
+        <div class="hero__bio-content">
+          <div class="hero__bio-text">
+            <p>
+              <strong>I'm a UX specialist with 20+ years of experience</strong>
+              in web and mobile design. Proven track record leading cross-functional
+              teams in corporate environments—including startups and a unicorn of
+              70,000+ employees—as well as planning and executing independent projects.
+            </p>
+            <p>
+              <strong>Expert in research, user-centered design, and product strategy</strong>,
+              with experience guiding products from concept to deployment and
+              <strong>developing design teams.</strong>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PROFESSIONAL EXPERIENCE ───────────────────────
+         Figma: ExperienceSection — yellow accent + white content
+         ─────────────────────────────────────────────── -->
+    <section aria-labelledby="exp-title">
+      <div class="experience__layout">
+
+        <div class="experience__accent" aria-hidden="true"></div>
+
+        <div class="experience__content">
+          <h2 id="exp-title" class="experience__title">Professional Experience</h2>
+
+          <ul class="experience__list" aria-label="Work history">
+            <li>
+              <strong>Mercado Libre – Senior UX Analyst to Team Leader to UX Tech Lead</strong>
+              | 7 yrs 5 mos 09/2017 – 01/2025
+            </li>
+            <li>
+              <strong>YOP – Design Coordinator</strong>
+              | 2 yrs 1 mo 05/2015 – 06/2017
+            </li>
+            <li>
+              <strong>Dridco – Product Design Coordinator</strong>
+              | 1 yr 8 mos 04/2013 – 01/2015
+            </li>
+            <li>
+              <strong>Dafiti – Front-End Developer &amp; UX Analyst</strong>
+              | 1 yr 03/2012 – 03/2013
+            </li>
+            <li>
+              <strong>HRsmart – Senior Web Developer to Manager of Web Design &amp; Development</strong>
+              | 5 yrs 2 mo 12/2006 – 02/2012
+            </li>
+            <li>
+              <strong>Freelance Web Design &amp; Development</strong>
+              | 8 yrs 1999 – 2006
+            </li>
+          </ul>
+
+          <div class="experience__actions">
+            <!-- href set by app.js from URLS.cv -->
+            <a href="#" class="btn-outline btn-outline-lg" data-cv-link
+               aria-label="Download my CV">
+              Download my CV
+            </a>
+            <a href="http://ar.linkedin.com/in/melinaszarf"
+               class="btn-text btn-text-lg"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Read more on LinkedIn (opens in new tab)">
+              Read more on LinkedIn
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <polyline points="15 3 21 3 21 9"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="10" y1="14" x2="21" y2="3"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ════════════════════════════════════════════════════
+       FOOTER — Figma: Footer
+       ════════════════════════════════════════════════════ -->
+  <footer id="site-footer" class="site-footer" aria-label="Contact information">
+    <div class="site-footer__inner">
+      <h2 class="site-footer__title">Contact me</h2>
+      <address class="site-footer__contact">
+        <a href="mailto:melina.sz@gmail.com">melina.sz@gmail.com</a><br />
+        +54 9 11 6365 9216 |
+        <a href="http://ar.linkedin.com/in/melinaszarf"
+           target="_blank" rel="noopener noreferrer">LinkedIn</a><br />
+        Ciudad de Buenos Aires 🇦🇷
+      </address>
+    </div>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>

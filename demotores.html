@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>DeMotores.com Responsive Relaunch — Melina Szarf</title>
+  <meta name="description" content="Case study: DeMotores.com responsive relaunch and iOS/Android app redesign by Melina Szarf." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- ════════════════════════════════════════════════════
+       HEADER — Figma: Header (Left + Right)
+       ════════════════════════════════════════════════════ -->
+  <header class="site-header" role="banner">
+    <div class="site-header__inner">
+      <a href="/" class="site-header__logo" aria-label="Melina — Home">Melina</a>
+      <nav aria-label="Main navigation">
+        <ul class="site-header__nav">
+          <li><a href="/case-studies.html">Case studies</a></li>
+          <li>
+            <button type="button" class="btn-outline btn-outline-white"
+                    onclick="scrollToFooter()"
+                    aria-label="Contact me — scroll to contact section">
+              Contact me
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ════════════════════════════════════════════════════
+       MAIN
+       ════════════════════════════════════════════════════ -->
+  <main id="main-content">
+
+    <!-- ── CASE STUDY HERO ────────────────────────────────
+         Figma: CaseStudyHero — dark bg, title + description + metadata
+         ─────────────────────────────────────────────── -->
+    <section class="cs-hero" aria-labelledby="cs-dm-title">
+      <div class="cs-hero__inner">
+
+        <!-- Figma: Title column -->
+        <div class="cs-hero__title-col">
+          <h1 id="cs-dm-title" class="cs-hero__title">
+            DeMotores.com Responsive Relaunch
+          </h1>
+        </div>
+
+        <!-- Figma: Description + Metadata column -->
+        <div class="cs-hero__meta-col">
+          <div class="cs-hero__desc">
+            <p>
+              DeMotores.com was the leading online automotive marketplace in
+              Argentina, with over 3 million monthly visitors. I joined the
+              company in 2013 as Design &amp; Front-End Development Coordinator.
+            </p>
+            <p>
+              In this case study, I will focus on the redesign and relaunch of
+              the DeMotores.com marketplace, as well as the redesign of its iOS
+              and Android native applications.
+            </p>
+          </div>
+          <!-- Figma: Metadata -->
+          <dl class="cs-hero__meta">
+            <dt>Year</dt>
+            <dd>2014</dd>
+          </dl>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── THE CHALLENGE ──────────────────────────────────
+         Figma: Case-Study-Card (fafafa bg) — text left, images right
+         ─────────────────────────────────────────────── -->
+    <section class="cs-section cs-section--alt" aria-labelledby="cs-challenge">
+      <div class="cs-section__inner">
+
+        <div class="cs-section__text">
+          <h2 id="cs-challenge" class="cs-section__title">The challenge</h2>
+          <div class="cs-section__body">
+            <p>
+              An Awareness Survey conducted in 2013 revealed that
+              <strong>DeMotores had the lowest top-of-mind awareness among users
+              who had previously visited the platform, at only 14%.</strong>
+            </p>
+            <p>
+              Based on this insight, and considering that the site's look and feel
+              had not been updated since 2009, we began a complete redesign of the
+              platform. The short-term milestones included redesigning the Listing,
+              Item Detail, and Home pages.
+            </p>
+            <p>
+              In my role as Design &amp; Front-End Development Coordinator,
+              <strong>I was responsible for defining the vision for the marketplace
+              redesign</strong>, which was relaunched on January 15, 2014.
+            </p>
+          </div>
+          <!-- Figma: ContainerMargin — "View gallery" button -->
+          <button type="button" class="btn-outline"
+                  data-gallery="demotores-challenge"
+                  aria-label="View gallery for the DeMotores challenge">
+            View gallery
+          </button>
+        </div>
+
+        <!-- Figma: Image Content — old + new homepage screenshots -->
+        <div class="cs-section__image" style="background-color: var(--color-surface);">
+          <img src="/img/cs-demotores-1.png"
+               alt="DeMotores.com — homepage before and after the 2014 redesign" loading="lazy" />
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── RESPONSIVE APPROACH ────────────────────────────
+         Figma: Case-Study-Card (white bg) — image left, text right — reversed
+         ─────────────────────────────────────────────── -->
+    <section class="cs-section cs-section--rev" aria-labelledby="cs-responsive">
+      <div class="cs-section__inner">
+
+        <div class="cs-section__text">
+          <h2 id="cs-responsive" class="cs-section__title">Responsive approach</h2>
+          <div class="cs-section__body">
+            <p>
+              Alongside the redesign,
+              <strong>I proposed a responsive approach to bring the marketplace's
+              critical workflows to mobile devices while also improving front-end
+              performance.</strong>
+            </p>
+            <p>
+              The initiative included a full CSS rewrite and the creation of what
+              we called an "asset server" — a Grails-based service that delivered
+              concatenated and minified assets, allowing us to serve different
+              resources depending on screen width.
+            </p>
+            <p>
+              The project was approved, and I led it through a successful release
+              on June 4th, 2014.
+              <strong>This responsive approach also beat our main competitor,
+              Mercado Libre, to market.</strong>
+            </p>
+          </div>
+        </div>
+
+        <div class="cs-section__image" style="background-color: #ffffff;">
+          <img src="/img/cs-demotores-2.png"
+               alt="DeMotores.com — responsive design across desktop, tablet and mobile devices"
+               loading="lazy" />
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── iOS & ANDROID APPS ─────────────────────────────
+         Figma: Case-Study-Card (fafafa bg) — text left, image right
+         ─────────────────────────────────────────────── -->
+    <section class="cs-section cs-section--alt" aria-labelledby="cs-apps">
+      <div class="cs-section__inner">
+
+        <div class="cs-section__text">
+          <h2 id="cs-apps" class="cs-section__title">iOS &amp; Android Apps</h2>
+          <div class="cs-section__body">
+            <p>
+              We identified the need to reinforce the consistent application of
+              the brand guidelines across all channels in order to ensure a
+              uniform and standardized experience that would strengthen
+              DeMotores' brand recognition.
+            </p>
+            <p>
+              When I joined the company,
+              <strong>both mobile apps were functionally and visually modeled after
+              iOS 4. With the upcoming release of iOS 7, I redesigned every
+              interface across both applications</strong>, taking into account the
+              unique characteristics of each operating system as well as our own
+              brand guidelines, to create more intuitive experiences for users on
+              each platform.
+            </p>
+          </div>
+          <p class="cs-section__achievements">Significant Achievements</p>
+          <ul class="cs-section__list">
+            <li>+30% conversion rate</li>
+            <li>+70% increase in engagement (14 screen views per session vs. 8)</li>
+            <li>Doubled usage of the Watchlist and social sharing features</li>
+          </ul>
+        </div>
+
+        <div class="cs-section__image" style="background-color: var(--color-surface);">
+          <img src="/img/cs-demotores-3.png"
+               alt="DeMotores.com — iOS and Android native app redesign"
+               loading="lazy" />
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ════════════════════════════════════════════════════
+       FOOTER — Figma: Footer
+       ════════════════════════════════════════════════════ -->
+  <footer id="site-footer" class="site-footer" aria-label="Contact information">
+    <div class="site-footer__inner">
+      <h2 class="site-footer__title">Contact me</h2>
+      <address class="site-footer__contact">
+        <a href="mailto:melina.sz@gmail.com">melina.sz@gmail.com</a><br />
+        +54 9 11 6365 9216 |
+        <a href="http://ar.linkedin.com/in/melinaszarf"
+           target="_blank" rel="noopener noreferrer">LinkedIn</a><br />
+        Ciudad de Buenos Aires 🇦🇷
+      </address>
+    </div>
+  </footer>
+
+  <!-- ════════════════════════════════════════════════════
+       GALLERY MODAL — <dialog> with native radio carousel
+       ════════════════════════════════════════════════════ -->
+  <dialog id="gallery-modal" class="gallery-modal"
+          aria-labelledby="modal-title-text"
+          oncancel="cancelGallery()">
+
+    <span id="modal-title-text" class="sr-only"></span>
+    <div class="gallery-modal__close-row">
+      <button type="button" class="gallery-modal__close"
+              onclick="closeGallery()" aria-label="Close gallery">✕</button>
+    </div>
+
+    <div class="gallery-modal__body">
+      <div id="gallery-carousel" class="gallery-carousel" hidden>
+        <figure id="gallery-slide" class="gallery-slide" aria-live="polite" aria-atomic="true">
+          <img id="gallery-img" src="" alt="" loading="lazy" />
+        </figure>
+        <div class="gallery-carousel__controls">
+          <button type="button" id="gallery-prev" class="gallery-nav-btn"
+                  onclick="galleryPrev()" aria-label="Previous image">&#8249;</button>
+          <fieldset id="gallery-dots" class="gallery-dots-fieldset">
+            <legend class="sr-only">Select gallery image</legend>
+          </fieldset>
+          <span id="gallery-counter" class="gallery-counter" aria-hidden="true"></span>
+          <button type="button" id="gallery-next" class="gallery-nav-btn"
+                  onclick="galleryNext()" aria-label="Next image">&#8250;</button>
+        </div>
+      </div>
+      <p id="gallery-empty" class="gallery-modal__empty">
+        Images coming soon — check back later.
+      </p>
+    </div>
+
+  </dialog>
+
+  <script src="/app.js"></script>
+</body>
+</html>
